@@ -127,7 +127,7 @@ window.currentCalculatorData = {
   bizType: "บริษัทจำกัด (Co., Ltd.)",
   docTier: "30 รายการ/เดือน",
   addons: "ไม่มีบริการเสริม",
-  estimatedPrice: "2,500"
+  estimatedPrice: "8,500"
 };
 
 function initCalculator() {
@@ -142,20 +142,20 @@ function initCalculator() {
   const addonsBreakdown = document.getElementById("breakdown-addons");
 
   function calculatePrice() {
-    let basePrice = 2500;
+    let basePrice = 8500;
     let selectedBizName = "บริษัทจำกัด (Co., Ltd.)";
 
     // 1. Business Type Factor
     const selectedBiz = document.querySelector('input[name="calc-biz-type"]:checked');
     if (selectedBiz) {
       if (selectedBiz.value === "individual") {
-        basePrice = 1500;
+        basePrice = 5000;
         selectedBizName = "บุคคลธรรมดา / ฟรีแลนซ์";
       } else if (selectedBiz.value === "partnership") {
-        basePrice = 2000;
+        basePrice = 6500;
         selectedBizName = "ห้างหุ้นส่วนจำกัด (หจก.)";
       } else if (selectedBiz.value === "company") {
-        basePrice = 2500;
+        basePrice = 8500;
         selectedBizName = "บริษัทจำกัด";
       }
     }
@@ -166,17 +166,17 @@ function initCalculator() {
     let volumeMultiplier = 0;
 
     if (docCount <= 30) {
-      docTierName = `${docCount} รายการ/เดือน (เริ่มต้น)`;
+      docTierName = `${docCount} รายการ/เดือน (Package 1 พื้นฐาน)`;
       volumeMultiplier = 0;
     } else if (docCount <= 70) {
-      docTierName = `${docCount} รายการ/เดือน (ขนาดกลาง)`;
-      volumeMultiplier = 1200;
+      docTierName = `${docCount} รายการ/เดือน (ขนาดกลาง / SME)`;
+      volumeMultiplier = 2000;
     } else if (docCount <= 120) {
-      docTierName = `${docCount} รายการ/เดือน (เติบโต)`;
-      volumeMultiplier = 2500;
+      docTierName = `${docCount} รายการ/เดือน (เติบโตต่อเนื่อง)`;
+      volumeMultiplier = 4000;
     } else {
-      docTierName = `${docCount}+ รายการ/เดือน (ปริมาณสูง)`;
-      volumeMultiplier = 4500;
+      docTierName = `${docCount}+ รายการ/เดือน (ปริมาณสูง / Enterprise)`;
+      volumeMultiplier = 6000;
     }
 
     if (docValueDisplay) {

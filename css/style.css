@@ -1647,6 +1647,235 @@ button, input, select, textarea {
   margin-top: 2px;
 }
 
+.plan-badge-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: var(--bg-surface-2);
+  color: var(--accent);
+}
+
+.pricing-note-banner {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(99, 102, 241, 0.05));
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.pricing-note-banner svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+/* Pricing Comparison Table */
+.pricing-matrix-wrap {
+  margin-top: 3.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.matrix-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.matrix-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.matrix-header p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.86rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table thead th {
+  background: var(--bg-surface-2);
+  font-weight: 800;
+  color: var(--text-main);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.comparison-table thead th:not(:first-child) {
+  text-align: center;
+  min-width: 140px;
+}
+
+.comparison-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.comparison-table tbody td:not(:first-child) {
+  text-align: center;
+}
+
+.comparison-table .feat-name {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.comparison-table .feat-sub {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  font-weight: 800;
+}
+
+.cross-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface-2);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Extra Services Price List Grid */
+.extra-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 992px) {
+  .extra-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.extra-price-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-price-card .card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.extra-price-card .head-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.extra-price-card .head-info h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+
+.extra-price-card .head-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.price-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.price-item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  gap: 0.75rem;
+}
+
+.price-item-list li .item-label {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.price-item-list li .item-label small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.price-item-list li .item-cost {
+  font-family: var(--font-en);
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
 /* --- Testimonials Section --- */
 .testimonials-grid {
   display: grid;
