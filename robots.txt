@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jsdevelops.github.io/all-aac/sitemap.xml
