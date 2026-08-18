@@ -39,6 +39,13 @@
    - Floating Contact Bar ด้านล่างขวา (LINE Official, Facebook Messenger, โทรด่วน, ปุ่ม Scroll To Top)
    - ลิงก์ตรงไปยังเพจ [facebook.com/allaac.th](https://www.facebook.com/allaac.th)
 
+7. **AI ผู้ช่วยบัญชีและภาษีอัจฉริยะ (Powered by Google Gemini Free Model)**:
+   - วิดเจ็ต Floating Chatbot อัจฉริยะ ให้คำปรึกษาตอบคำถามภาษี บัญชี จดทะเบียนบริษัท และราคาค่าบริการตลอด 24 ชม.
+   - เชื่อมต่อกับ **Google Gemini API Free Model** (`gemini-2.5-flash`)
+   - ระบบ **Smart Fallback Knowledge-Engine**: ตอบคำถามจากฐานข้อมูล ALL ACCOUNT ได้ทันทีแม้ไม่ได้ใส่ API Key
+   - ปุ่มลัด Quick Suggestions (ถามราคา, ขั้นตอนเปิดบริษัท, กำหนดยื่นภาษี, ระบบ PEAK, ติดต่อเจ้าหน้าที่)
+   - ปรับแต่งหรือใส่ Gemini API Key ได้ผ่านปุ่มไอคอนรูปฟันเฟือง ⚙️ บนหัวหน้าต่างแชต
+
 ---
 
 ## 📁 โครงสร้างโปรเจกต์
@@ -47,12 +54,24 @@
 /Users/3designs/acc all acount/
 ├── index.html              # ไฟล์ HTML หลักของเว็บไซต์
 ├── css/
-│   └── style.css           # สไตล์ชีต CSS ดีไซน์ระบบ Glassmorphism + Responsive
+│   └── style.css           # สไตล์ชีต CSS ดีไซน์ระบบ Glassmorphism + Responsive + AI Chatbot
 ├── js/
-│   ├── app.js              # ตรรกะระบบ Interactive (Calculator, Modals, FAQs, Forms, Theme)
-│   └── tax-calendar.js     # ข้อมูลและปฏิทินภาษี
+│   ├── app.js              # ตรรกะระบบ Interactive (Calculator, Modals, Forms, Theme)
+│   ├── chatbot.js          # ระบบ AI Chatbot (Gemini API + Smart Knowledge Fallback)
+│   └── tax-calendar.js     # ข้อมูลและปฏิทินภาษีสรรพากร
+├── Code.gs                 # สคริปต์ Google Apps Script บันทึกลง Google Sheets
+├── GOOGLE_SHEET_SETUP.md   # คู่มือการติดตั้ง Google Sheets และ Web App
 └── README.md               # เอกสารแนะนำโปรเจกต์
 ```
+
+---
+
+## 🤖 การตั้งค่า Google Gemini API Key สำหรับ Chatbot (ฟรี)
+
+1. สมัครรับ Gemini API Key ฟรีได้ที่ [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. เมื่อเปิดหน้าเว็บ ALL ACCOUNT ให้คลิกที่ **ไอคอนรูปหุ่นยนต์ AI ลอยมุมขวาล่าง**
+3. คลิกที่ **ไอคอนรูปฟันเฟือง ⚙️** ด้านขวาบนของหน้าต่างแชต
+4. นำ API Key ที่ได้มาวางแล้วกด **ตกลง (OK)** ระบบจะบันทึกคีย์ลงในเครื่องอัตโนมัติ
 
 ---
 
@@ -69,3 +88,4 @@ npx -y serve .
 ```
 
 จากนั้นเปิดเบราว์เซอร์ไปที่ `http://localhost:3000`
+

@@ -1025,6 +1025,13 @@
   <!-- Floating Quick Contact Buttons & Scroll Top                               -->
   <!-- ========================================================================= -->
   <div class="floating-contact-bar">
+    <!-- AI Chatbot Floating Trigger -->
+    <button id="ai-chat-trigger" class="ai-chat-trigger-btn" aria-label="เปิดผู้ช่วย AI ตอบคำถามภาษีและบัญชี">
+      <span class="ai-chat-badge">AI Assistant</span>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><circle cx="9" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle><path d="M9 17h6"></path></svg>
+      <span class="float-tooltip">🤖 ถาม AI ผู้ช่วยภาษี & บัญชี (24 ชม.)</span>
+    </button>
+
     <a href="https://line.me/R/ti/p/@861wjahj" target="_blank" rel="noopener noreferrer" class="float-btn float-line" aria-label="แชททาง LINE">
       <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.019 9.587.39.085.922.26 1.057.595.12.302.079.776.039 1.082l-.164 1.037c-.05.31-.243 1.214 1.063.662 1.306-.552 7.042-4.148 9.605-7.102 1.621-1.782 2.381-3.6 2.381-5.861z"/></svg>
       <span class="float-tooltip">คุย LINE กับนักบัญชี</span>
@@ -1043,6 +1050,60 @@
     <button id="scroll-top-btn" class="scroll-top-btn" aria-label="กลับขึ้นด้านบน">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- AI Chatbot Window (Gemini AI Powered)                                     -->
+  <!-- ========================================================================= -->
+  <div class="ai-chat-window" id="ai-chat-window">
+    <!-- Header -->
+    <div class="ai-chat-header">
+      <div class="ai-chat-profile">
+        <div class="ai-chat-avatar-head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><circle cx="9" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle><path d="M9 17h6"></path></svg>
+        </div>
+        <div class="ai-chat-title">
+          <h4>ALL ACCOUNT AI</h4>
+          <div class="ai-chat-status">
+            <span class="ai-status-dot"></span>
+            <span>ผู้ช่วยออนไลน์ (Gemini AI)</span>
+          </div>
+        </div>
+      </div>
+      <div class="ai-chat-controls">
+        <button id="ai-chat-apikey-btn" class="ai-chat-btn-icon" title="ตั้งค่า Gemini API Key (ฟรี)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+        <button id="ai-chat-clear" class="ai-chat-btn-icon" title="ล้างประวัติการสนทนา">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+        </button>
+        <button id="ai-chat-close" class="ai-chat-btn-icon" title="ปิดหน้าต่างแชต">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="ai-chat-messages" id="ai-chat-messages"></div>
+
+    <!-- Quick Suggestion Chips -->
+    <div class="ai-chat-suggestions">
+      <button type="button" class="ai-quick-chip" data-prompt="สอบถามราคาแพ็กเกจทำบัญชี">💰 ราคาทำบัญชี</button>
+      <button type="button" class="ai-quick-chip" data-prompt="จดทะเบียนบริษัทต้องเตรียมอะไรบ้าง และค่าบริการเท่าไหร่">📋 จดทะเบียนบริษัท</button>
+      <button type="button" class="ai-quick-chip" data-prompt="กำหนดยื่นภาษีสรรพากรและประกันสังคมประจำเดือนนี้">⏰ กำหนดยื่นภาษี</button>
+      <button type="button" class="ai-quick-chip" data-prompt="โปรแกรมบัญชี Cloud PEAK หรือ FlowAccount ดียังไง">☁️ ระบบ Cloud PEAK</button>
+      <button type="button" class="ai-quick-chip" data-prompt="ขอช่องทางติดต่อเจ้าหน้าที่ ALL ACCOUNT">📞 ติดต่อเจ้าหน้าที่</button>
+    </div>
+
+    <!-- Input Form -->
+    <div class="ai-chat-input-wrap">
+      <form id="ai-chat-form" class="ai-chat-form">
+        <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="พิมพ์ข้อความสอบถามเรื่องบัญชีและภาษี..." autocomplete="off">
+        <button type="submit" class="ai-chat-send-btn" aria-label="ส่งข้อความ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </div>
   </div>
 
   <!-- ========================================================================= -->
@@ -1098,5 +1159,6 @@
   <!-- Scripts -->
   <script src="js/tax-calendar.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/chatbot.js"></script>
 </body>
 </html>
